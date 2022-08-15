@@ -1,21 +1,16 @@
-// const mongoose = require('mongoose');
-
-// const themeSchema = new mongoose.Schema({
-//     type1: String,
-//     type2: String,
-//     type3: String,
-//     type4: String
-// },{timestamps:true});
-
-// const Theme = mongoose.model('Collection', themeSchema);
-
-// module.exports = Theme;
 const mongoose = require('mongoose')
 
 const artistSchema = new mongoose.Schema({
+    title: String,
+    name: String,
     image: String,
-    description: String
-})
+    type: String,
+    level: Number,
+    links: [
+        String
+    ],
+    description: String,
+},{timestamps:true})
 
 const Artist = mongoose.model('Music', artistSchema);
 

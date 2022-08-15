@@ -74,7 +74,11 @@ app.delete('/:id',(req,res) => {
 
 //EDIT ROUTE
 app.get('/:id/edit',(req,res) => {
-  res.render('edit.ejs')
+    Artist.findById(req.params.id, (err,foundArtist) => {
+        res.render('edit.ejs',{
+            artist:foundArtist
+        })      
+    })
 })
 
 //UPDATE ROUTE

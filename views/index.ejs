@@ -67,16 +67,13 @@
       <div class="container-fluid vh-100">
         <ul>
             <div class="container">
-                <div class="row row-cols-lg-3">
+                <div class="row row-cols-lg-3 ">
                     <% for(let i = 0; i < artist.length; i++){ %>
-                    <div class="col text-justify p-3">
-                        <a href="/show/<%=artist[i].id%>">
-                        <img src="<%=artist[i].image%>" alt=""  width="300"></a><br>
-                        <!-- <%=artist[i].description%> -->
-                    </div>
-                    <!-- <%if(i%2 === 1){%>
-                        <div class="w-100"></div>
-                    <%}%> -->
+                    <a href="/show/<%=artist[i].id%>" style="text-decoration: none;">
+                    <div class="col m-3 align-self-end" style="background: url(<%=artist[i].image%>) center no-repeat; background-size: cover; width: 300px; height: 300px; text-align: center;" >
+                        <span style="color: white; justify-self: center;"><%=artist[i].title%> <br>By<br> <%=artist[i].name%></span>
+                        <!-- <img src="<%=artist[i].image%>" alt=""  width="300"> -->
+                    </div></a>
                     <% } %>
                     </div>
             </div>
