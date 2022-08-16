@@ -1,3 +1,6 @@
 .index-list{
     color: red;
 }
+#index-title:hover{
+    color: black;
+}

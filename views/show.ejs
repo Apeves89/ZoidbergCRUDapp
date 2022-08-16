@@ -29,11 +29,6 @@
                                 New
                             </a>
                         </li>
-                        <li class="nav-item active">
-                            <a href="/edit" class="nav-link">
-                                Edit
-                            </a>
-                        </li>
                     </ul>
                 </div>
         </nav>
@@ -46,15 +41,19 @@
                 <img src="<%=artist.image%>" alt=""  width="500px">
             </div>
             <div class="col p-3 text-justify overflow-auto" style="height: 500px;">
-                <a href="/<%=artist.id%>/edit"><button type="button">Edit Post</button></a> <br>
+                <a href="/<%=artist.id%>/edit"><button type="button" class="btn btn-primary">Edit Post</button></a><form action="/<%=artist.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Delete Post</button></form> <br>
                 <b>Title: </b><%=artist.title%> <br>
                 <b>Creator: </b><%=artist.name%> <br>
-                <b>Category: </b><%=artist.type%> <br> 
-                <b>Difficulty Level: </b><%=artist.level%> <br>
+                <b>Category: </b><%=artist.type%> <br>
                 <b>Additional Links:</b>
                 <% for(let i=0;i<artist.links.length;i++){%>
+                    <%if(artist.links[i]=== ""){%>
+                        <%=artist.links[i]%>
+                    <%}else{%>
                     <a href="<%=artist.links[i]%>" target="_blank">Link <%=i+1%> </a>
-                <%}%> <br><br>
+                    <%}%>
+                <%}%> <br>
+                <b>Summary</b><br>
                 <%=artist.description%>
             </div>
         </div>
