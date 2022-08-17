@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Welcome</title>
+    <title>Edit | Project Showcase</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
     <script src="/app.js" charset="utf-8"></script>
     <!-- Bootstrap CSS -->
@@ -13,23 +13,23 @@
     
   </head>
   <body>
-      <nav class="navbar  navbar-expand-sm navbar-light bg-info">
-        <a href="" class="navbar-brand mb-0 h1">
-            <img class="d-inline-block align-top" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30">
-            New Page</a>
+      <nav class="navbar  navbar-expand-sm navbar-dark bg-info">
+        <a href="/" class="navbar-brand mb-0 h1">
+            <img class="d-inline-block align-top" src="/icon.png" width="30" height="30">
+            Project Showcase</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"><span class="navbar-toggler-icon"></span></button>
             <div 
-                class="collapse navbar-collapse" 
+                class="collapse navbar-collapse justify-content-end" 
                 id="navbarMenu">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a href="/" class="nav-link active">
-                            Index
+                            Home
                         </a>
                     </li>
                     <li class="nav-item active">
                         <a href="/new" class="nav-link">
-                            New
+                            Submit Project
                         </a>
                     </li>
                 </ul>
@@ -49,9 +49,15 @@
                   </div>
             </div>
 
-            <div class="form-group">
-                <label for="InputImageLink">Image URL</label>
-                <input type="text" class="form-control" name="image" id="InputImageLink" value="<%=artist.image%>">
+            <div class="form-group" id="add-image-link">
+                <label for="InputImageLink">Image URLs&emsp;</label><button type="button" class="btn btn-secondary rounded-pill" id="image-links">Click to add more Links</button>
+                <%for(let i=0; i<artist.image.length; i++){%>
+                    <%if(artist.image[i]=== ""){%>                        
+                    <%}else{%>
+                    <input type="url" class="form-control" name="image" id="InputImageLink" value="<%=artist.image[i]%>">
+                    <%}%>                    
+                    <%}%>
+                <!-- <input type="text" class="form-control" name="image" id="InputImageLink" value="<%=artist.image%>"> -->
             </div>
 
             <div class="row">
@@ -63,7 +69,7 @@
             </div>
 
             <div class="form-group" id="add-links">
-            <label for="InputAddLinks">Additional Links</label><button type="button" class="btn btn-outline-secondary" id="more-links">Click to add more Links</button>
+            <label for="InputAddLinks">Additional Links&emsp;</label><button type="button" class="btn btn-secondary rounded-pill" id="more-links">Click to add more Links</button>
               <%for(let i=0; i<artist.links.length; i++){%>
                 <%if(artist.links[i]=== ""){%>
                     
@@ -79,7 +85,7 @@
                 <textarea class="form-control" id="InputDescription" name="description" cols="2" rows="5"><%=artist.description%></textarea>
             </div>      
 
-                <input type="submit" value="Submit Changes"/>
+                <input type="submit" value="Submit Changes" class="btn btn-success rounded-pill"/>
             
         </form>
     </div>

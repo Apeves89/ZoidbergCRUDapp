@@ -85,6 +85,7 @@ app.get('/:id/edit',(req,res) => {
 app.put('/:id',(req,res) => {
     Artist.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedModel) => {
         res.redirect('/')
+        // res.send(updatedModel)
     })
 })
 
@@ -94,7 +95,7 @@ app.get('/' , (req, res) => {
         res.render('index.ejs', {
           artist:allArtists
         });      
-    }).sort({name:1})
+    })
 });
 
 //NEW ROUTE

@@ -4,17 +4,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Home | Project Showcase</title>
+    <title>Welcome</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
     
   </head>
   <body>
-    <nav class="navbar  navbar-expand-sm navbar-dark bg-primary">
-        <a href="/" class="navbar-brand mb-0 h1">
-            <img class="d-inline-block align-top" src="/icon.PNG" width="30" height="30" >
-            <!-- <svg width="30px" height="30px" viewBox="0 0 237 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <nav class="navbar  navbar-expand-sm navbar-light bg-primary">
+        <a href="" class="navbar-brand mb-0 h1">
+            <!-- <img class="d-inline-block align-top" src="/icon.PNG" width="30" height="30" > -->
+            <svg width="30px" height="30px" viewBox="0 0 237 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Adding-layers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.938220796">
                     <g id="iMac-21.5&quot;" transform="translate(-856.000000, -402.000000)" fill="#69228D" stroke="#69228D">
                         <g id="Group-2" transform="translate(856.000000, 402.000000)">
@@ -27,19 +27,19 @@
                         </g>
                     </g>
                 </g>
-            </svg> -->
-            Project Showcase</a>
+            </svg>
+            Index Page</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+            <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a href="/" class="nav-link active">
-                            Home
+                            Index
                         </a>
                     </li>
                     <li class="nav-item active">
                         <a href="/new" class="nav-link">
-                            Submit Project
+                            New
                         </a>
                     </li>                    
                     <li class="nav-item active">
@@ -52,38 +52,29 @@
                             Clear
                         </a>
                     </li>
+                    <li class="nav-item active">
+                        <a href="/test" class="nav-link">
+                            Test
+                        </a>
+                    </li>
                 </ul>
             </div>
-    </nav>
-    <div class="container-fluid vh-100 overflow-auto" >
-        <div class="row row-cols-sm p-3 justify-content-center">
-
-            
-            <%for(let i = 0; i < artist.length; i++){ %>
-                <!-- <a href="/show/<%=artist[i].id%>" class="p-1"><img src="<%=artist[i].image[0]%>" alt=""  width="300" height="300" class="index-image rounded-lg"></a> -->
-                <div id="carouselExampleSlidesOnly" class="carousel slide p-3" data-ride="carousel" style="width:300px">
-                    <div class="carousel-inner">
-                        <a href="/show/<%=artist[i].id%>">
-                        <%for(let j = 0; j < artist[i].image.length; j++){ %>
-                            <%if(j === 0){%>
-                                <div class="carousel-item active">
-                                    <img src="<%=artist[i].image[j]%>" class="d-block w-100 index-image rounded-lg" alt="...">
-                                </div>
-                            <%}else{%>
-                                <div class="carousel-item">
-                                    <img src="<%=artist[i].image[j]%>" class="d-block w-100 index-image rounded-lg" alt="...">
-                                </div>
-                            <%}%>
-                        <%}%>
-                        </a>
+      </nav>
+      <!-- <div class="container-fluid vh-100">
+        <ul>
+            <div class="container">
+                <div class="row row-cols-sm justify-content-around">
+                    <% for(let i = 0; i < artist.length; i++){ %>
+                    
+                    <div class="col p-3 align-self-end">
+                        <!-- <span style="color: white; justify-self: center;" id="index-title" ><%=artist[i].title%> <br>By<br> <%=artist[i].name%></span> -->
+                        <a href="/show/<%=artist[i].id%>"><img src="<%=artist[i].image%>" alt=""  width="300" class="index-image"></a>
                     </div>
-                  </div>
-                  
-            <% } %>
-
-
-        </div>
-    </div>
+                    <% } %>
+                    </div>
+            </div>
+        </ul>
+      </div> -->
     
   </body>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
