@@ -34,7 +34,9 @@
 
 
 
+        
 
+        <div class="container-fluid vh-100" id="backdrop">
         <div class="container row row-cols-sm m-auto">
             <div class="col p-3 d-flex justify-content-center" >
                 <!-- <img src="<%=artist.image%>" alt=""  style="height:75vh;"> -->
@@ -56,7 +58,7 @@
                                     <img src="<%=artist.image[i]%>" class="d-block w-100" alt="...">
                                 </div>
                             <%}else{%>
-                                <div class="carousel-item"data-interval="5000">
+                                <div class="carousel-item" data-interval="5000">
                                     <img src="<%=artist.image[i]%>" class="d-block w-100" alt="...">
                                 </div>                                    
                             <%}%>
@@ -73,24 +75,29 @@
                   </div>
 
             </div>
-            <div class="col-lg p-3 text-justify overflow-auto align-self-center" style="height: 75vh;">
-                <a href="/<%=artist.id%>/edit"><button type="button" class="btn btn-primary">Edit Post</button></a>
-                <form action="/<%=artist.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Delete Post</button></form> <br>
-                <b>Title: </b><%=artist.title%> <br>
-                <b>Creator: </b><%=artist.name%> <br>
-                <b>Category: </b><%=artist.type%> <br>
-                <b>Additional Links:</b>
+            <div class="col-lg p-3 text-justify align-self-center rounded-lg" style="height: 65vh;background-color: rgb(186, 184, 184,.9);border: 1px solid white;">
+                <div class="row pl-2">
+                <a href="/<%=artist.id%>/edit"><button type="button" class="btn btn-primary mr-3">Edit Post</button></a>
+                <form action="/<%=artist.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger">Delete Post</button></form>
+            </div>
+            <div class="col">
+                <div class="row"><b>Title: </b><%=artist.title%></div> 
+                <div class="row"><b>Creator: </b><%=artist.name%></div>
+                <div class="row"><b>Category: </b><%=artist.type%></div>
+                <div class="row"><b>Additional Links:</b>
                 <% for(let i=0;i<artist.links.length;i++){%>
                     <%if(artist.links[i]=== ""){%>
                         <%=artist.links[i]%>
                     <%}else{%>
-                    <a href="<%=artist.links[i]%>" target="_blank">Link <%=i+1%> </a>
+                    <a href="<%=artist.links[i]%>" target="_blank">&emsp;Link <%=i+1%></a>
                     <%}%>
-                <%}%> <br>
-                <b>Summary</b><br>
-                <%=artist.description%>
+                    <%}%>
+                </div>
+                <div class="row"><b>Summary</b></div>
+                <div class="row overflow-auto" style="height:46vh"><%=artist.description%></div>
             </div>
         </div>
+    </div>
 
 
 

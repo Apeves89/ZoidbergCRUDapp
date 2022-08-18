@@ -35,11 +35,12 @@
             </div>
       </nav>
 
-    <div class="container rounded-lg p-3">
+      <div class="container-fluid vh-100" id="backdrop">
+    <div class="container rounded-lg p-3" style="background-color: rgb(186, 184, 184,.9);border: 1px solid white;">
         <form action="/" method="POST">
             <div class="row">
                 <div class="col">
-                    <label for="InputTitle">Title</label>
+                    <label for="InputTitle">Project Title</label>
                     <input type="text" class="form-control" name="title" id="InputTitle" >
                 </div>
                 <div class="col">
@@ -49,7 +50,7 @@
             </div>
             
             <div class="form-group" id="add-image-link">
-                <label for="InputImageLink">Image URLs&emsp;</label><button type="button" class="btn btn-secondary rounded-pill" id="image-links">Click to add more Images</button>
+                <label for="InputImageLink">Project Images&emsp;</label><button type="button" class="btn btn-secondary rounded-pill" id="image-links">Click to add more Images</button>
                 <input type="url" class="form-control" name="image" id="InputImageLink">
             </div>
 
@@ -75,6 +76,7 @@
             
         </form>
     </div>
+</div>
 
 
 

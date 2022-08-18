@@ -40,22 +40,23 @@
                 </ul>
             </div>
     </nav>
-    <div class="container-fluid vh-100 overflow-auto" >
+    <div class="container-fluid vh-100 overflow-auto" id="">
         <div class="row row-cols-sm p-3 justify-content-center">
 
             
             <%for(let i = 0; i < artist.length; i++){ %>
-                <!-- <a href="/show/<%=artist[i].id%>" class="p-1"><img src="<%=artist[i].image[0]%>" alt=""  width="300" height="300" class="index-image rounded-lg"></a> -->
                 <div id="carouselExampleSlidesOnly" class="carousel slide p-3" data-ride="carousel" style="width:300px">
                     <div class="carousel-inner">
                         <a href="/show/<%=artist[i].id%>">
                         <%for(let j = 0; j < artist[i].image.length; j++){ %>
                             <%if(j === 0){%>
-                                <div class="carousel-item active">
+                                <div class="carousel-item active card">
+                                    <div class="card-img-overlay"><%=artist[i].title%></div>
                                     <img src="<%=artist[i].image[j]%>" class="d-block w-100 index-image rounded-lg" alt="...">
                                 </div>
                             <%}else{%>
-                                <div class="carousel-item">
+                                <div class="carousel-item card">
+                                    <div class="card-img-overlay"><%=artist[i].title%></div>
                                     <img src="<%=artist[i].image[j]%>" class="d-block w-100 index-image rounded-lg" alt="...">
                                 </div>
                             <%}%>
