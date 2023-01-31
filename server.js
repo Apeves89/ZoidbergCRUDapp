@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3003;
 //Database
 const MONGODB_URI = process.env.MONGODB_URI;
 
-//Middleware
+//Middleware 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
