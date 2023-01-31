@@ -25,6 +25,10 @@ My biggest struggle is that my creativity limits my ability to try and learn new
 
 I would like to add sign up/login functionality and incorperate two models into the app. Adding a search bar would be a good thing to attempt.
 
+## **UPDATE January 31,2023**
+Login/register fuctionality added to app. Created simple login/register pages to test functionality. Redesign coming soon.
+
+
 
 
 
