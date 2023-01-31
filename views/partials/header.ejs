@@ -1,0 +1,63 @@
+<nav class="navbar  navbar-expand-sm navbar-dark bg-primary">
+    <a href="/" class="navbar-brand mb-0 h1">
+        <img class="d-inline-block align-top" src="/icon.PNG" width="30" height="30">&emsp;Project Showcase</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+            <ul class="navbar-nav">
+                <% if (currentUser){%>
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link disabled">
+                            Welcome, <%=currentUser.username%>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <form id="delete-form" hidden action="/sessions?_method=DELETE" method="POST">
+                        </form>
+                        <a onclick="document.getElementById('delete-form').submit()" class="nav-link" id="logout">
+                            Logout
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/new" class="nav-link">
+                            Submit Project
+                        </a>
+                    </li> 
+                <%}else{%>
+                    <% if (title === "Login"){%>
+                        <li class="nav-item active">
+                            <a href="/user/new" class="nav-link active">
+                                Register
+                            </a>
+                        </li>
+                    <%}else if(title === "Register"){%>
+                        <li class="nav-item active">
+                            <a href="/sessions/new" class="nav-link active">
+                                Login
+                            </a>
+                        </li>
+                    <%}else{%>
+                        <li class="nav-item active">
+                            <a href="/user/new" class="nav-link active">
+                                Register
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="/sessions/new" class="nav-link active">
+                                Login
+                            </a>
+                        </li>
+                    <%}%>
+                <%}%>                  
+                <!-- <li class="nav-item active">
+                    <a href="/seed" class="nav-link">
+                        Seed
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="/Clear" class="nav-link">
+                        Clear
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+</nav>

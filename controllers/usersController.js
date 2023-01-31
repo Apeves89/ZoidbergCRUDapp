@@ -6,7 +6,8 @@ const User = require('../models/userSchema.js')
 users.get('/new', (req, res) => {
   res.render('users/new.ejs', 
   {
-    currentUser: req.session.currentUser
+    currentUser: req.session.currentUser,
+    title: "Register"
   })
 })
 

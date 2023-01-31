@@ -4,7 +4,10 @@ const sessions = express.Router()
 const User = require('../models/userSchema.js')
 
 sessions.get('/new', (req, res) => {
-  res.render('sessions/new.ejs', { currentUser: req.session.currentUser })
+  res.render('sessions/new.ejs', { 
+    currentUser: req.session.currentUser,
+    title: "Login" 
+  })
 })
 
 // on sessions form submit (log in)
@@ -36,7 +39,7 @@ sessions.post('/', (req, res) => {
         // add the user to our session
         req.session.currentUser = foundUser
         // redirect back to our home page
-        res.redirect('/locations')
+        res.redirect('/')
       } else {
         // passwords do not match
         res.send('<a href="/"> password does not match </a>')
@@ -47,7 +50,7 @@ sessions.post('/', (req, res) => {
 
 sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/locations')
+    res.redirect('/')
   })
 })
 

@@ -1,40 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Submit | Project Showcase</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" charset="utf-8"></script>
-    <script src="/app.js" charset="utf-8"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
-    
-  </head>
+    <%- include('./partials/head.ejs')%>
   <body>
-      <nav class="navbar  navbar-expand-sm navbar-dark bg-warning">
-        <a href="/" class="navbar-brand mb-0 h1">
-            <img class="d-inline-block align-top" src="/icon.PNG" width="30" height="30">&emsp;Project Showcase</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu"><span class="navbar-toggler-icon"></span></button>
-            <div 
-                class="collapse navbar-collapse justify-content-end" 
-                id="navbarMenu">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a href="/" class="nav-link active">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="/new" class="nav-link">
-                            Submit Project
-                        </a>
-                    </li>
-                </ul>
-            </div>
-      </nav>
-
+    <%- include('./partials/header.ejs')%>
       <div class="container-fluid vh-100" id="backdrop">
     <div class="container rounded-lg p-3" style="background-color: rgb(186, 184, 184,.9);border: 1px solid white;">
         <form action="/" method="POST">
@@ -50,7 +18,8 @@
             </div>
             
             <div class="form-group" id="add-image-link">
-                <label for="InputImageLink">Project Images&emsp;</label><button type="button" class="btn btn-secondary rounded-pill" id="image-links">Click to add more Images</button>
+                <label for="InputImageLink">Project Images&emsp;</label>
+                <button type="button" class="btn btn-secondary rounded-pill" id="image-links">Click to add more Images</button>
                 <input type="url" class="form-control" name="image" id="InputImageLink">
             </div>
 
@@ -63,7 +32,8 @@
             </div>
 
               <div class="form-group" id="add-links">
-                <label for="InputAddLinks">Additional Links&emsp;</label><button type="button" class="btn btn-secondary rounded-pill" id="more-links">Click to add more Links</button>
+                <label for="InputAddLinks">Additional Links&emsp;</label>
+                <button type="button" class="btn btn-secondary rounded-pill" id="more-links">Click to add more Links</button>
                 <input type="url" class="form-control" name="links" id="InputAddLinks" value="http://">
             </div>
 

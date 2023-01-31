@@ -37,7 +37,9 @@ router.delete('/:id',(req,res) => {
 router.get('/:id/edit',(req,res) => {
     Artist.findById(req.params.id, (err,foundArtist) => {
         res.render('edit.ejs',{
-            artist:foundArtist
+            artist:foundArtist,
+            title: "Edit Project",
+            currentUser: req.session.currentUser
         })      
     })
 })
@@ -46,7 +48,6 @@ router.get('/:id/edit',(req,res) => {
 router.put('/:id',(req,res) => {
     Artist.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedModel) => {
         res.redirect('/')
-        // res.send(updatedModel)
     })
 })
 
@@ -54,14 +55,19 @@ router.put('/:id',(req,res) => {
 router.get('/' , (req, res) => {
     Artist.find({},(err,allArtists) => {
         res.render('index.ejs', {
-            artist:allArtists
+            artist:allArtists,
+            title: "Home",
+            currentUser: req.session.currentUser
         });      
     })
 });
 
 //NEW ROUTE
 router.get('/new',(req,res) => {
-    res.render('new.ejs')
+    res.render('new.ejs',{
+        title: "Submit Project",
+        currentUser: req.session.currentUser
+    })
 })
 
 //CREATE ROUTE
@@ -75,7 +81,9 @@ router.post('/',(req,res) => {
 router.get('/show/:id',(req,res) => {
     Artist.findById(req.params.id, (err,foundArtist) => {
         res.render('show.ejs',{
-            artist:foundArtist
+            artist:foundArtist,
+            title: foundArtist.title,
+            currentUser: req.session.currentUser
         })
     })
 })
